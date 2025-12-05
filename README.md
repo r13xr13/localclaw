@@ -141,7 +141,7 @@ See `LICENSE` for formal access clauses.
 
 ---
 
-## 🚀 Launch Example
+## Launch Example
 
 > This is a **stub demo** only. Full functionality is gated.
 
