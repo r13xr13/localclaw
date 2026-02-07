@@ -1,4 +1,4 @@
-# Sigil7 (formerly HELIX Intelligence)
+# Sigil7 (formerly HELIX Intelligence) Dropping soon 
 
 **Sovereign Cyber Intelligence Platform**  
 Local AI-powered threat intelligence and red/blue team automation — fully offline, OPSEC-hardened, containerized.
