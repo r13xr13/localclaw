@@ -1,4 +1,4 @@
-# Sigil7 (formerly HELIX ) Dropping Soon
+# Sigil7 (formerly HELIX ) Release date : 3/1/26
 
 **Sovereign Cyber Intelligence Platform**  
 Local AI-powered threat intelligence and red/blue team automation — fully offline, OPSEC-hardened, containerized.
