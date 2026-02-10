@@ -1,96 +1,154 @@
-# Sigil7 (formerly HELIX ) Release date : 3/1/26
-
-**Sovereign Cyber Intelligence Platform**  
-Local AI-powered threat intelligence and red/blue team automation — fully offline, OPSEC-hardened, containerized.
-
-**Built for operators who demand control, precision, and zero external dependencies.**
+# LocalClaw — Local-First Intelligence Platform
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Docker Pulls](https://img.shields.io/docker/pulls/yourusername/sigil7.svg?logo=docker)](https://hub.docker.com/r/yourusername/sigil7) <!-- update if you publish -->
+[![Docker Pulls](https://img.shields.io/docker/pulls/yourusername/localclaw.svg?logo=docker)](https://hub.docker.com/r/yourusername/localclaw)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
-## Overview
+**Release Date:** 3/1/26  
+**Runtime:** Docker, Python 3.10+
 
-Sigil7 is an autonomous, local-first cyber intelligence engine that unifies Kali Linux tools under an AI-driven operator. It reasons, plans, executes tool chains, persists threat knowledge in graphs, generates YAML playbooks, correlates findings with NVD feeds, and produces code/scripts — all without phoning home.
+LocalClaw is a **local-first intelligence platform** designed for security professionals and privacy-conscious users who want full control over their tools, data, and execution environment.
 
-Key pillars:
-- **100% offline / air-gapped capable** after setup
-- Quantized local LLMs (llama.cpp + models like MythoMax-L2-13B)
-- Full Kali tool integration with safe wrappers & parsing
-- Neo4j graph brain for IOCs, assets, relationships, kill-chains
-- Persistent memory (JSON/YAML + schema validation)
-- YAML-driven playbooks (red team, blue team, OSINT, IR)
-- Private web enrichment via self-hosted SearXNG + MCP
-- Code generation & editing loop (via Zed editor integration)
+It runs on your machine, uses local models by default, and integrates online capabilities in a way that remains inspectable, controllable, and user-owned.
 
-Designed for red teams, blue teams, incident responders, and bug hunters who want agentic automation without cloud risks or telemetry.
+---
 
-## Features
+## What Is LocalClaw?
 
-- Autonomous OSINT profiling, recon → vuln chaining → report generation
-- Behavioral threat profiling & network persona reconstruction
-- Simulated offensive actions with evasion-aware payloads
-- Live NVD/CVE correlation & attack path suggestion
-- Operator-supervised or fully autonomous modes
-- Secure tool execution (allow-lists, timeouts, no destructive defaults without confirm)
-- Persistent multi-session campaigns that never forget
-- Zed editor integration for AI-assisted exploit/script writing
+LocalClaw is a self-hosted AI-driven system for analysis, research, automation, and knowledge management.
 
-## Architecture
+It is built to:
+- Replace cloud-dependent AI and analysis tools
+- Centralize workflows into a single local platform
+- Provide powerful online capabilities without surrendering control
+- Operate transparently, with no hidden services or telemetry
 
-## Installation & Quick Start
+LocalClaw is not a SaaS replacement.  
+It is an **operator-owned system**.
 
-### Prerequisites
-- Docker & Docker Compose
-- NVIDIA GPU (optional, for faster inference)
-- ~10–15 GB disk space (image + models)
+---
 
-### Docker (recommended)
+## Who Is LocalClaw For?
+
+### Security and Technical Professionals
+LocalClaw is designed with professionals in mind:
+
+- Analysts
+- Engineers
+- Researchers
+- Security practitioners
+- Power users who want full visibility and control
+
+It assumes comfort with containers, configuration, and local tooling.
+
+---
+
+### Privacy-First Daily Users
+LocalClaw is equally usable by daily users who care about privacy:
+
+- Writers and researchers
+- Developers and students
+- Anyone who does not want personal data leaving their machine
+- Users who want modern AI tools without surveillance
+
+The same architecture that supports professional workflows also protects everyday use.
+
+---
+
+## Design Principles
+
+LocalClaw is built on a small number of non-negotiable principles:
+
+- Local-first execution
+- User-owned data and memory
+- Transparent service boundaries
+- No hidden network activity
+- Online access that is visible and controllable
+- Defaults that are powerful, not neutered
+
+Privacy comes from **architecture**, not feature removal.
+
+---
+
+## Default Capabilities
+
+LocalClaw ships with the following **enabled by default**:
+
+### Local AI Engine
+- Quantized local language models
+- llama.cpp-compatible backends
+- User-controlled model selection
+
+### Online Research (SearXNG)
+- Integrated SearXNG for web search
+- Aggregated sources with reduced tracking
+- Queries and results visible and auditable
+- No third-party cloud AI services
+
+### Editor Integration (Zed)
+- Zed editor integration for writing and coding
+- Local AI assistance via LocalClaw
+- Online research and enrichment available inline
+- No external brokers or relays
+
+### Container Management (Portainer)
+- Portainer included for visibility and control
+- Inspect containers, volumes, and logs
+- Start, stop, or isolate services as needed
+- No opaque background processes
+
+### Automation and Tooling
+- Workflow orchestration
+- Task execution with guardrails
+- Clear confirmation for impactful actions
+
+---
+
+## Interfaces
+
+### Graphical Interface (GUI)
+- Runs locally on the host
+- Not exposed externally
+- Central place for workflows, history, and configuration
+
+### Terminal Interface (TUI)
+- Full-featured command-line interface
+- Scriptable and automation-friendly
+- Designed for daily professional use
+
+### Editor Interface
+- Tight integration with Zed
+- AI-assisted writing and development
+- Local-first with optional online enrichment
+
+---
+
+## Architecture Overview (Conceptual)
+
+LocalClaw is composed of:
+
+- A local AI inference service
+- A coordination and memory layer
+- Online research services (self-hosted)
+- Tool execution services
+- User interfaces (GUI, TUI, editor)
+- Container management and observability
+
+Each component is isolated, inspectable, and replaceable.
+
+---
+
+## Installation
+
+### Requirements
+- Docker and Docker Compose
+- Python 3.10+ (for development)
+- Approximately 10–15 GB disk space
+
+---
+
+### Homebrew (macOS and Linux)
 
 ```bash
-# Clone repo
-git clone https://github.com/r13xr13/helix-intelligence.git sigil7
-cd sigil7
-
-# (Optional) Download models (Mythomax or Qwen) to ./models/
-# Example: wget https://huggingface.co/.../MythoMax-L2-13B.gguf -O models/MythoMax.gguf
-
-# Start (adjust docker-compose.yml for your paths/ports)
-docker compose up -d
-
-# Enter the main container
-docker exec -it sigil7 bash   # or zsh
-
-Inside the container:
-# Run Sigil7 engine (adjust to your launcher)
-python engine.py --mode supervised --target example.com
-# or your custom entrypoint: ./sigil7.sh --model MythoMax.gguf
-
-Dev Container (Zed / VS Code)
-•  Open the project folder in Zed or VS Code
-•  Accept the “Reopen in Container” prompt (uses .devcontainer/devcontainer.json)
-•  Zed Agent Panel connects to local llama.cpp + MCP-SearXNG
-Current Status
-This is an early release / work-in-progress. Core engine, tool wrappers, graph integration, and local LLM inference are functional. Full autonomy and advanced playbooks are still being hardened.
-Security note: Tools run in isolated subprocesses with strict allow-lists. Always use authorized targets only. No internet required after initial model/download setup.
-Roadmap (2026)
-•  Full LangGraph orchestration with reflection loops
-•  More curated Kali tool wrappers (top 50+)
-•  Encrypted sensitive memory sections
-•  Better Zed/ACP integration for live code-gen
-•  Community-contributed safe playbooks
-•  Optional darknet/OSINT modules (Tor bridge)
-Contributing
-Contributions welcome — especially:
-•  Safe tool wrappers
-•  Playbook YAML examples
-•  Bug fixes / hardening
-Please open issues/PRs with clear descriptions. Security-related reports → private contact (see SECURITY.md if exists).
-License
-MIT License — see LICENSE file.
-Ethical use only: This tool is for authorized security testing and research. Misuse violates laws and is not condoned.
-
-“Observe. Profile. Execute. Secure.”
-— Sigil7 Directive
-Questions? Reach out on Mastodon: @r13@infosec.exchange
+brew install localclaw
 
