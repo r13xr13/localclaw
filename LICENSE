@@ -1,70 +1,78 @@
-# LICENSE | LYRA Intelligence – R13 Systems  
-_Last Updated: July 2025_
+LICENSE | LocalClaw – R13 Systems
 
-## ⚖️ Dual-License Declaration
+Last Updated: July 2025
 
-This repository is released under a **dual-license structure**, balancing transparency with strict control over proprietary components.
+Dual-License Declaration
 
----
+This repository is distributed under a dual-license framework, combining open access for certain components with strict control over proprietary elements.
 
-## 1. Open Source Components (MIT License)
+1. Open Source Components (MIT License)
 
-The following assets are released under the [MIT License](https://opensource.org/licenses/MIT):
+The following assets are released under the MIT License
+:
 
-- `launch_lyra.sh`
-- `docs/`
-- `README.md`
-- `config/` (templates and chat formatting)
-- Architecture diagrams, usage examples, and high-level documentation
+launch_localclaw.sh
 
-**You are free to:**
-- Use, copy, modify, merge, publish, or distribute these files
-- Do so for **educational or non-commercial purposes**
+docs/
 
-**You may not:**
-- Claim origin or authorship
-- Resell or bundle with proprietary products without written consent
+README.md
 
----
+config/ (templates, chat formatting, and configuration examples)
 
-## 2. Proprietary & Restricted Components
+Architecture diagrams, usage examples, and other high-level documentation
 
-The following directories and any associated compiled artifacts are **proprietary and confidential**, owned by **R13 Systems**:
+Permissions:
 
-- `/core/`
-- `/agents/`
-- `/memory/`
-- `/private_scripts/`
-- `/keys/` and activation logic
-- `/models/` (excluding metadata)
-- Embedded prompts or logic not published in `config/`
+Use, copy, modify, merge, publish, or distribute these files
 
-**Unauthorized use, duplication, or reverse engineering of these components is strictly prohibited.**
+Apply them for educational or non-commercial purposes
 
-These files may exist in your local checkout as **placeholders or stubs**, but contain **no usable code** unless explicitly licensed.
+Restrictions:
 
----
+Do not claim original authorship
 
-## 3. Commercial & Operational Licensing
+Do not resell, redistribute, or bundle with proprietary products without written permission
 
-For commercial, research, or deployed operational use, a **private license key and signed usage agreement** are required.
+2. Proprietary & Restricted Components
 
-To request partnership, deployment, or usage rights:
+The following directories and any associated compiled or executable artifacts are proprietary to R13 Systems:
 
-📧 Contact: `ziradielr13@proton.me`
+/core/
 
----
+/agents/
 
-## 4. Ethical Boundaries
+/memory/
 
-Use of LYRA in violation of international laws, ethical AI standards, or for unapproved surveillance/offensive operations is **grounds for immediate revocation of access.** R13 Systems reserves full rights of enforcement.
+/private_scripts/
 
----
+/keys/ and activation mechanisms
 
-## 5. No Warranty
+/models/ (excluding metadata)
 
-This software is provided “as is”, without warranty of any kind, express or implied. Use at your own discretion and risk.
+Embedded prompts or logic not included in config/
 
----
+Restrictions:
+
+Unauthorized use, copying, or reverse engineering is strictly prohibited
+
+Local copies may exist as placeholders or stubs, but contain no usable code unless explicitly licensed
+
+3. Commercial & Operational Licensing
+
+For commercial, research, or deployed operational use, a valid license key and signed agreement are required.
+
+To request authorization for partnership, deployment, or other usage:
+
+📧 Contact: ziradielr13@proton.me
+
+4. Ethical Use
+
+Use of LocalClaw in violation of international law, ethical AI guidelines, or for unapproved surveillance/offensive activities may result in immediate revocation of access.
+R13 Systems reserves all rights to enforce compliance.
+
+5. No Warranty
+
+This software is provided “as is”, without warranties of any kind, either express or implied.
+Use it at your own discretion and risk.
 
 © 2025 R13 Systems. All rights reserved.
